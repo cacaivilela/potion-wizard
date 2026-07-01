@@ -1,0 +1,20 @@
+{
+  "name": "Potion Wizard",
+  "short_name": "Potion Wizard",
+  "description": "Descubra 57 reações químicas reais misturando ingredientes do dia a dia.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d0518",
+  "theme_color": "#6a2c9c",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

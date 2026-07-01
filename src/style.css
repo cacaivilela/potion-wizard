@@ -6,6 +6,34 @@
   -webkit-user-select: none;
 }
 
+/* Botão flutuante "Instalar app" (PWA) */
+.btn-instalar {
+  display: none;
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 300;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background: #16a34a;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.3), 0 0 18px rgba(22,163,74,0.5);
+  animation: pulseInstalar 2.2s ease-in-out infinite;
+}
+.btn-instalar:hover { filter: brightness(1.1); }
+.btn-instalar:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0,0,0,0.3); }
+@keyframes pulseInstalar {
+  0%, 100% { box-shadow: 0 4px 0 rgba(0,0,0,0.3), 0 0 14px rgba(22,163,74,0.45); }
+  50% { box-shadow: 0 4px 0 rgba(0,0,0,0.3), 0 0 24px rgba(22,163,74,0.8); }
+}
+
 :root {
   --roxo: #6a2c9c;
   --roxo-claro: #9b59d0;

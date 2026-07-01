@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="25%" r="95%">
+      <stop offset="0" stop-color="#3a1d5e"/>
+      <stop offset="60%" stop-color="#1a0b2e"/>
+      <stop offset="100%" stop-color="#0d0518"/>
+    </radialGradient>
+    <linearGradient id="liq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8be9a0"/>
+      <stop offset="1" stop-color="#2ecc71"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- estrelinhas -->
+  <g fill="#ffd166">
+    <circle cx="118" cy="120" r="5"/>
+    <circle cx="402" cy="146" r="6"/>
+    <circle cx="392" cy="392" r="5"/>
+    <circle cx="132" cy="404" r="4"/>
+  </g>
+  <!-- brilho do líquido -->
+  <ellipse cx="256" cy="392" rx="150" ry="40" fill="#2ecc71" opacity="0.35"/>
+  <!-- corpo do frasco (contorno) -->
+  <path d="M226 150 H286 V230 L356 380 A44 44 0 0 1 312 424 H200 A44 44 0 0 1 156 380 L226 230 Z"
+        fill="#0d0518" stroke="#dfeff5" stroke-width="14" stroke-linejoin="round"/>
+  <!-- líquido mágico -->
+  <path d="M182 360 H330 L344 388 A40 40 0 0 1 306 420 H206 A40 40 0 0 1 168 388 Z" fill="url(#liq)"/>
+  <!-- bolhas -->
+  <g fill="#eafff2">
+    <circle cx="232" cy="330" r="11"/>
+    <circle cx="278" cy="350" r="8"/>
+    <circle cx="252" cy="372" r="7"/>
+  </g>
+  <!-- boca do frasco -->
+  <rect x="216" y="138" width="80" height="18" rx="9" fill="#dfeff5"/>
+</svg>

@@ -466,5 +466,44 @@ function flash(texto, cor) {
   setTimeout(() => f.remove(), 1200)
 }
 
+// ===================== PWA (instalar + offline) =====================
+// Registra o service worker para o jogo funcionar offline como um app.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {})
+  })
+}
+
+// Botão "Instalar app" — aparece quando o navegador permite instalação.
+let promptInstalar = null
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault()
+  promptInstalar = e
+  botaoInstalar().style.display = 'flex'
+})
+window.addEventListener('appinstalled', () => {
+  promptInstalar = null
+  const b = document.getElementById('btnInstalar')
+  if (b) b.style.display = 'none'
+})
+
+function botaoInstalar() {
+  let b = document.getElementById('btnInstalar')
+  if (b) return b
+  b = document.createElement('button')
+  b.id = 'btnInstalar'
+  b.className = 'btn-instalar'
+  b.innerHTML = '⬇️ Instalar app'
+  b.onclick = async () => {
+    if (!promptInstalar) return
+    promptInstalar.prompt()
+    await promptInstalar.userChoice
+    promptInstalar = null
+    b.style.display = 'none'
+  }
+  document.body.appendChild(b)
+  return b
+}
+
 // ===================== START =====================
 telaInicial()
